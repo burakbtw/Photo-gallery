@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+  </head>
+
+  <body style="background-color: black;">
+    <div class="container">
+      <h1 style="text-align:center">Fotoğraf Galerisi</h1>
+      <div class="table-responsive">
+        <table class="table-borderless">
+          <tr>
+            <td class="resim"></td>
+            <td class="resim"></td>
+            <td class="resim"></td>
+          </tr>
+          <tr>
+            <td class="resim"></td>
+            <td class="resim"></td>
+            <td class="resim"></td>
+          </tr>
+          <tr>
+            <td class="resim"></td>
+            <td class="resim"></td>
+            <td class="resim"></td>
+          </tr>
+          <tr>
+            <td class="resim"></td>
+            <td class="resim"></td>
+            <td class="resim"></td>
+          </tr>
+          <tr>
+            <td class="resim"></td>
+            <td class="resim"></td>
+            <td class="resim"></td>
+          </tr>
+        </table>
+        <div class="p-3 mb-2 bg-light text-dark font-italic" style="font-family: 'Alex Brush', cursive;">
+          <p style="color: white;">Copyright © 2023 Kalite tesadüf değildir.
+          </p>
+          <p style="color: white;">Burak Erdaloğlu</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+<style>
+  h1 {
+  color: white;
+}
+  img {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 20px 70px 20px 70px;
+    border: 3px solid white;
+  }
+  .container {
+    margin-top:28px;
+  }
+  .p-3{
+    text-align: center;
+    color:white;
+  }
+   .table-borderless {
+      margin: 0px auto;
+    }
+  font-family: 'Alex Brush', cursive;
+</style>
+
+
+
+<script>
+  const url = 'https://source.unsplash.com/random/';
+
+var randomImage = new Array();
+for (let i = 0; i < 15; i++) {
+  randomImage[i] = url + randomSize();
+}
+
+var resimler = document.getElementsByClassName('resim');
+
+for (let a = 0; a < 15; a++) {
+  resimler[a].innerHTML =
+    resimler[a].innerHTML + '<img src=' + randomImage[a] + ' />';
+  console.log(resimler[a]);
+}
+
+function randomNumber() {
+  return Math.floor(Math.random() * 10) + 300;
+}
+
+function randomSize() {
+  return `${randomNumber()}x${randomNumber()}`;
+}
+
+</script>
